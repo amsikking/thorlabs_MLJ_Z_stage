@@ -4,7 +4,7 @@ Python device adaptor: Dual synchronized Thorlabs MLJ motorized high-load vertic
 ![social_preview](https://github.com/amsikking/thorlabs_MLJ_Z_stage/blob/main/social_preview.png)
 
 ## Details:
-- A basic device adaptor and GUI for controlling 2 Thorlabs MLJ motorized high-load vertical translation stages in a synchronized way (currently supports MLJ050 and MLJ150 models).
+- A basic device adaptor and GUI for controlling 2 Thorlabs MLJ motorized high-load vertical translation stages in a synchronized way (currently uses MLJ150 and MLJ250 models).
 - This can provide a flexible and stable solution for moving ~40Kg (~88lb) over a 50mm range to a positional tolerance of about +-10um.
 - Some benefits of this setup are:
   - the stages can hold their position without power
