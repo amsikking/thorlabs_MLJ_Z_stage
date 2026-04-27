@@ -121,8 +121,14 @@ class GuiZStage:
             print('%s: -> done.'%name)
             print('%s: current Z_mm   = %s'%(name, z_stage.stage1.position_mm))
         # run gui:
+        # add close function + any commands for when the user hits the 'X'
+        def _close():
+            if verbose:
+                print('%s: -> closing.'%name)
+            root.destroy()
+            return None
+        root.protocol("WM_DELETE_WINDOW", _close)
         root.mainloop()
-        root.destroy()
 
 if __name__ == '__main__':
     z_stage = GuiZStage(
