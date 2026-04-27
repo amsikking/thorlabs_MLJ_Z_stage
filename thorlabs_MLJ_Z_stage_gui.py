@@ -19,7 +19,7 @@ class GuiZStage:
         # init hardware:
         edge_limits_mm = (limits_mm[0] + 0.1, limits_mm[1] - 0.1)
         z_stage = thorlabs_MLJ_Z_stage.ZStage(
-            which_ports=('COM7','COM9'),
+            which_ports=which_ports,
             limits_mm=limits_mm,
             acceleration_mmpss=limit_mmpss,
             verbose=very_verbose)
@@ -126,5 +126,5 @@ class GuiZStage:
 
 if __name__ == '__main__':
     z_stage = GuiZStage(
-        which_ports=('COM7','COM9'), verbose=True, very_verbose=False)
+        which_ports=('COM12','COM17'), verbose=True, very_verbose=False)
 
