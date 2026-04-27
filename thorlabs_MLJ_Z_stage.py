@@ -1,5 +1,5 @@
-import thorlabs_MLJ050 # github.com/amsikking/thorlabs_MLJ050
 import thorlabs_MLJ150 # github.com/amsikking/thorlabs_MLJ150
+import thorlabs_MLJ250 # github.com/amsikking/thorlabs_MLJ250
 
 class ZStage:
     def __init__(self,
@@ -15,14 +15,14 @@ class ZStage:
         self.very_verbose = very_verbose
         if self.verbose:
             print("%s: opening..."%self.name)
-        self.stage1 = thorlabs_MLJ050.Controller(
+        self.stage1 = thorlabs_MLJ150.Controller(
             which_port=which_ports[0],
             limits_mm=limits_mm,
             velocity_mmps=velocity_mmps,
             acceleration_mmpss=acceleration_mmpss,            
             home=False,
             verbose=very_verbose)
-        self.stage2 = thorlabs_MLJ150.Controller(
+        self.stage2 = thorlabs_MLJ250.Controller(
             which_port=which_ports[1],
             limits_mm=limits_mm,
             velocity_mmps=velocity_mmps,
@@ -92,7 +92,7 @@ class ZStage:
         return None
 
 if __name__ == '__main__':
-    z_stage = ZStage(which_ports=('COM7','COM9'),
+    z_stage = ZStage(which_ports=('COM12','COM17'),
                      limits_mm=(0, 50),
                      verbose=True,
                      very_verbose=False)
